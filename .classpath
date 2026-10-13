@@ -6,14 +6,14 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="src" path="src/main/java"/>
-	<classpathentry kind="con" path="org.eclipse.jst.server.core.container/org.eclipse.jst.server.tomcat.runtimeTarget/Apache Tomcat v11.0 2">
-		<attributes>
-			<attribute name="owner.project.facets" value="jst.web"/>
-		</attributes>
-	</classpathentry>
+	<classpathentry kind="con" path="org.eclipse.jst.server.core.container"/>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
-	<classpathentry kind="lib" path="C:/Users/franc/Desktop/Carrera/Programacion4/AppWeb_ProgCapas/mysql-connector-java-5.1.42-bin.jar">
+	<!--
+	  Librerias del proyecto en ruta RELATIVA: portable entre maquinas.
+	  El runtime de Tomcat se elige en Eclipse -> Properties -> Targeted Runtimes.
+	-->
+	<classpathentry kind="lib" path="lib/mysql-connector-java-5.1.47-bin.jar">
 		<attributes>
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 		</attributes>

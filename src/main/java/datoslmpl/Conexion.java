@@ -11,7 +11,8 @@ public class Conexion {
 	private String host = "jdbc:mysql://localhost:3306/";
 	private String user = "root";
 	private String pass = "root";
-	private String dbName = "sistema_clientes??profileSQL=true&useSSL=false";
+	// "?" unico: la cadena de conexion JDBC usa un solo separador de parametros.
+	private String dbName = "sistema_clientes?profileSQL=true&useSSL=false";
 
 	protected Connection connection;
 	
