@@ -4,9 +4,9 @@ public class Usuario {
 
 	private int idUsuario; 
 	
-	private String Usuario;  
+	private String nombreUsuario;  
 
-	private String Contraseña; 
+	private String contrasenia; 
 	
 	
 	
@@ -16,11 +16,11 @@ public class Usuario {
 	}
 	
 	
-	public Usuario(int idUsuario, String Usuario, String Contraseña) {
+	public Usuario(int idUsuario, String nombreUsuario, String contrasenia) {
 		super(); 
 		this.idUsuario=idUsuario; 
-		this.Usuario=Usuario;  
-		this.Contraseña=Contraseña;
+		this.nombreUsuario=nombreUsuario;  
+		this.contrasenia=contrasenia;
 	}
 
 
@@ -34,28 +34,28 @@ public class Usuario {
 	}
 
 
-	public String getUsuario() {
-		return Usuario;
+	public String getNombreUsuario() {
+		return nombreUsuario;
 	}
 
 
-	public void setUsuario(String usuario) {
-		Usuario = usuario;
+	public void setNombreUsuario(String nombreUsuario) {
+		this.nombreUsuario = nombreUsuario;
 	}
 
 
-	public String getContraseña() {
-		return Contraseña;
+	public String getContrasenia() {
+		return contrasenia;
 	}
 
 
-	public void setContraseña(String contraseña) {
-		Contraseña = contraseña;
+	public void setContrasenia(String contrasenia) {
+		this.contrasenia = contrasenia;
 	}
 	
 	@Override
 	public String toString() {
-		return "Usuario [idUsuario=" + idUsuario + ", Usuario=" + Usuario + ", Contraseña=" + Contraseña + "]";
+		return "Usuario [idUsuario=" + idUsuario + ", Usuario=" + nombreUsuario + ", Contraseña=" + contrasenia + "]";
 	}
 	
 	

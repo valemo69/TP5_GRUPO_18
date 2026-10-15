@@ -9,9 +9,9 @@ import entidad.Usuario;
 
 public class UsuarioDao {
 
-    private static final String LOGIN = "SELECT id, nombre_usuario, contrasenia "
-    		+ "FROM usuarios WHERE nombre_usuario = ? "
-    		+ "AND contrasenia = ?";
+	private static final String LOGIN = "SELECT id_usuario, usuario, contrasena "
+    		+ "FROM usuarios WHERE usuario = ? "
+    		+ "AND contrasena = ?";
 
     public Usuario obtenerUsuario(String nombreUsuario, String password) {
         Conexion conexion = new Conexion(); // Instanciamos 
@@ -32,9 +32,9 @@ public class UsuarioDao {
 
             if (resultSet.next()) {
                 usuario = new Usuario();
-                usuario.setIdUsuario(resultSet.getInt("id"));
-                usuario.setUsuario(resultSet.getString("nombre_usuario"));
-                usuario.setContraseña(resultSet.getString("contrasenia"));
+                usuario.setIdUsuario(resultSet.getInt("id_usuario"));
+                usuario.setNombreUsuario(resultSet.getString("usuario"));
+                usuario.setContrasenia(resultSet.getString("contrasena"));
             }
 
         } catch (SQLException e) {
