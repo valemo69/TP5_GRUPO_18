@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <faceted-project>
-  <!-- Runtime de Tomcat NO fijado: cada integrator elige el suyo
-       en Eclipse -> Properties -> Targeted Runtimes. -->
-
+  <runtime name="Apache Tomcat v11.0"/>
   <fixed facet="java"/>
   <fixed facet="jst.web"/>
   <fixed facet="wst.jsdt.web"/>

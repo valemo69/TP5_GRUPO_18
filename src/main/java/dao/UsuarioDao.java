@@ -40,11 +40,13 @@ public class UsuarioDao {
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {
-            // Cerramos recursos y conexión 
+            // Cerramos recursos y conexión
             try {
                 if (resultSet != null) resultSet.close();
                 if (statement != null) statement.close();
-                conexion.close(); 
+                // Solo cerramos si la conexion se pudo abrir: si Open() fallo,
+                // la conexion interna es null y closing() lanzaria NullPointerException.
+                if (cn != null) conexion.close();
             } catch (SQLException e) {
                 e.printStackTrace();
             }
