@@ -27,6 +27,8 @@ public class ClienteDao {
 
 		try {
 			cn = conexion.Open();
+			
+			if (cn == null) return false;
 
 			statement = cn.prepareStatement(INSERTAR);
 			statement.setString(1, cliente.getDni());
@@ -47,12 +49,16 @@ public class ClienteDao {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {
-			try {
-				if (statement != null) statement.close();
-			
-				if (cn != null) conexion.close();
-			} catch (SQLException e) {
-				e.printStackTrace();
+			if (statement != null) {
+			    try {
+			    	statement.close();
+			    }
+			    catch (SQLException e) {
+			    	e.printStackTrace();
+			    }
+			}
+			if (cn != null) {
+			    conexion.close();
 			}
 		}
 
@@ -93,12 +99,26 @@ public class ClienteDao {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {
-			try {
-				if (resultSet != null) resultSet.close();
-				if (statement != null) statement.close();
-				if (cn != null) conexion.close();
-			} catch (SQLException e) {
-				e.printStackTrace();
+			if (resultSet != null) {
+			    try {
+			    	resultSet.close();
+			    	}
+			    catch (SQLException e)
+			    {
+			    	e.printStackTrace();
+			    }
+			}
+			if (statement != null) {
+			    try {
+			    	statement.close();
+			    	}
+			    catch (SQLException e)
+			    {
+			    	e.printStackTrace();
+			    }
+			}
+			if (cn != null) {
+			    conexion.close();
 			}
 		}
 
