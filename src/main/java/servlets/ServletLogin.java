@@ -47,7 +47,7 @@ protected void doPost(HttpServletRequest request, HttpServletResponse response) 
             // 5. Redirigimos a la vista principal.
             // El redirect debe incluir el context path: "/Login.jsp" solo
             // apuntaria a la raiz del servidor y devolveria 404.
-            response.sendRedirect(request.getContextPath() + "/Login.jsp");
+            response.sendRedirect(request.getContextPath() + "/AltaCliente.jsp");
         } else {
             // 6. Si falla, mandamos el mensaje de error de vuelta al Login.jsp
             request.setAttribute("mensajeError", "Usuario o contraseña incorrectos.");
