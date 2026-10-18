@@ -1,9 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <faceted-project>
-  <!-- Runtime de Tomcat NO fijado a proposito: cada integrator elige el suyo
-       en Eclipse > Properties > Targeted Runtimes. Si se fija aqui (por ejemplo
-       apache-tomcat-11.0.0-M22), el proyecto deja de compilar en el resto de
-       las maquinas porque el nombre no existe en su Eclipse. -->
+  <runtime name="Apache Tomcat v11.0"/>
   <fixed facet="java"/>
   <fixed facet="jst.web"/>
   <fixed facet="wst.jsdt.web"/>

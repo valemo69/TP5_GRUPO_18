@@ -167,6 +167,21 @@
             Usuario: <strong><%= NombreUsuario %></strong>
         </div>
 
+		<% 
+            String msjExito = (String) request.getAttribute("mensajeExito");
+            String msjError = (String) request.getAttribute("mensajeError");
+            
+            if (msjExito != null) { 
+        %>
+            <div style="background-color: #c6f6d5; color: #2f855a; padding: 10px; margin-bottom: 15px; border-radius: 4px;">
+                <strong>Exito:</strong> <%= msjExito %>
+            </div>
+        <% } else if (msjError != null) { %>
+            <div style="background-color: #fed7d7; color: #c53030; padding: 10px; margin-bottom: 15px; border-radius: 4px;">
+                <strong>Error:</strong> <%= msjError %>
+            </div>
+        <% } %>
+
         <div class="form-card">
             <form action="ServletCliente" method="POST">
                 <div class="form-grid">
