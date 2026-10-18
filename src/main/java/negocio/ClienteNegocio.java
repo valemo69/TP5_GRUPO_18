@@ -87,6 +87,10 @@ public class ClienteNegocio {
 
         return null; 
     }
+    
+    public java.util.ArrayList<Cliente> obtenerTodos() {
+        return clienteDao.obtenerTodos();
+    }
 
     private boolean esNuloOVacio(String str) {
         return str == null || str.trim().isEmpty();

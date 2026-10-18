@@ -124,4 +124,45 @@ public class ClienteDao {
 
 		return existe;
 	}
+	
+	public java.util.ArrayList<Cliente> obtenerTodos() {
+		Conexion conexion = new Conexion();
+		Connection cn = null;
+		PreparedStatement statement = null;
+		ResultSet resultSet = null;
+		java.util.ArrayList<Cliente> lista = new java.util.ArrayList<>();
+
+		try {
+			cn = conexion.Open();
+			if (cn == null) return lista;
+
+			statement = cn.prepareStatement("SELECT * FROM clientes");
+			resultSet = statement.executeQuery();
+
+			while (resultSet.next()) {
+				Cliente c = new Cliente();
+				c.setId_cliente(resultSet.getInt("id_cliente"));
+				c.setDni(resultSet.getString("dni"));
+				c.setCuil(resultSet.getString("cuil"));
+				c.setNombre(resultSet.getString("nombre"));
+				c.setApellido(resultSet.getString("apellido"));
+				c.setSexo(resultSet.getString("sexo"));
+				c.setFecha_nacimiento(resultSet.getString("fecha_nacimiento"));
+				c.setDireccion(resultSet.getString("direccion"));
+				c.setNacionalidad(resultSet.getString("nacionalidad"));
+				c.setLocalidad(resultSet.getString("localidad"));
+				c.setProvincia(resultSet.getString("provincia"));
+				c.setCorreo_electronico(resultSet.getString("correo_electronico"));
+				c.setTelefono(resultSet.getString("telefono"));
+				lista.add(c);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			if (resultSet != null) { try { resultSet.close(); } catch (SQLException e) { e.printStackTrace(); } }
+			if (statement != null) { try { statement.close(); } catch (SQLException e) { e.printStackTrace(); } }
+			if (cn != null) { conexion.close(); }
+		}
+		return lista;
+	}
 }

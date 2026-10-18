@@ -154,10 +154,10 @@
     %>
 
     <!-- Menú Lateral -->
-    <div class="sidebar">
+        <div class="sidebar">
         <div class="sidebar-title">Menú</div>
         <a href="AltaCliente.jsp">Alta de Cliente</a>
-      
+        <a href="ServletListadoClientes">Listado de Clientes</a>
     </div>
 
     <!-- Contenido -->
