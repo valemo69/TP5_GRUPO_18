@@ -89,6 +89,7 @@ public class ClienteDao {
 
 		try {
 			cn = conexion.Open();
+			if (cn == null) return false;
 
 			statement = cn.prepareStatement(sql);
 			statement.setString(1, valor);

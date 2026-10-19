@@ -40,7 +40,7 @@ public class ClienteNegocio {
         }
 
         // Validacion solo letras
-        String regexLetras = "^[a-zA-ZáéíóúÁÉÍÓÚñÑ\\s]+$";
+        String regexLetras = "^[a-zA-ZaeiouAEIOUñÑüÜ\s-]+$";
         if (!cliente.getNombre().matches(regexLetras)) return "El nombre solo debe contener letras.";
         if (!cliente.getApellido().matches(regexLetras)) return "El apellido solo debe contener letras.";
         if (!cliente.getNacionalidad().matches(regexLetras)) return "La nacionalidad solo debe contener letras.";
